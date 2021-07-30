@@ -37,4 +37,12 @@ public class ItemService {
         return itemRepo.findAll();
     }
 
+    public Item findItemById(Long id) {
+        return itemRepo.findItemById(id);
+    }
+
+    public Item updateItem(Item item) {
+        return itemRepo.save(item);
+    }
+
 }

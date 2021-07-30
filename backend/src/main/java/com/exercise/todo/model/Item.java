@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 public class Item implements Serializable {
@@ -15,17 +18,16 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable=false, updatable = false)
     private Long id;
-    @Column(nullable = false)
-    private String name;
-    @Column
-    private Boolean completed;
+    @Column(nullable = false, updatable = true)
+    private String name;    
+    @Column //(columnDefinition="Boolean default false")
+    private Boolean completed = false;
+    
     
     public Item() {}
 
-    public Item(Long id, String name) {
-        this.id = id;
+    public Item(String name) {
         this.name = name;
-        this.completed = false;
     }
 
     public String getName() {
@@ -43,7 +45,21 @@ public class Item implements Serializable {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
-    
-    
+
+    public void itemCompleted() {
+        this.setCompleted(true);
+    }
+
+    public void itemIncompleted() {
+        this.setCompleted(false);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     
 }

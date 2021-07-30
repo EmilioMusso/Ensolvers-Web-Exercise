@@ -16,6 +16,15 @@ export class ItemService {
     return this.http.get<Item[]>(`${this.apiServerUrl}/`)
   }
 
-  //TODO agregar los put del back
+  public addItem(item: Item): Observable<Item> {
+    return this.http.post<Item>(`${this.apiServerUrl}/add`, item);
+  }
 
+  public updateItem(item: Item): Observable<Item> {
+    return this.http.put<Item>(`${this.apiServerUrl}/update`, item);
+  }
+
+  public deleteItem(itemId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/delete/${itemId}`);
+  }
 }

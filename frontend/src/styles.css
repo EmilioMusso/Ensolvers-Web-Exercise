@@ -2,7 +2,7 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
 body{
-    margin-top:20px;
+    margin-top: 60px;
     background: #f8f8f8;
 }
 
@@ -19,7 +19,7 @@ body{
     font-weight: 600;
   }
 
-  .toolbar img {
+.toolbar img {
     margin: 0 16px;
   }
 
