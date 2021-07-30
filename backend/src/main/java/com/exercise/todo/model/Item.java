@@ -20,7 +20,7 @@ public class Item implements Serializable {
     private Long id;
     @Column(nullable = false, updatable = true)
     private String name;    
-    @Column //(columnDefinition="Boolean default false")
+    @Column 
     private Boolean completed = false;
     
     
