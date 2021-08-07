@@ -1,0 +1,5 @@
+com/exercise/todo/repo/ItemRepo.class
+com/exercise/todo/ToDoApplication.class
+com/exercise/todo/service/ItemService.class
+com/exercise/todo/ItemController.class
+com/exercise/todo/model/Item.class
